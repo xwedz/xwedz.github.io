@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>匯率轉換計算機</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+  <h1>匯率轉換計算機</h1>
+  <p>輸入台幣金額後，將顯示轉換為美金、歐元、日圓、韓元、澳幣的金額與幣別單位。</p>
+  <p>請輸入台幣金額：</p>
+  <input type="number" id="twAmount">
+  <button onclick="convertCurrency()">計算</button>
+  <h2>計算結果：</h2>
+  <ul id="result"></ul>
+    
+  <script>
+    function convertCurrency() {
+      
+      var taiwanAmount = parseFloat(document.getElementById("twAmount").value);
+
+      
+      var exchangeRates = {
+        USD: 0.03,   
+        EUR: 0.025,  
+        JPY: 3.5,    
+        KRW: 35,     
+        AUD: 0.04    
+      };
+
+      
+      var convertedAmounts = {};
+      for (var currency in exchangeRates) {
+        var rate = exchangeRates[currency];
+        var convertedAmount = (taiwanAmount * rate).toFixed(2);
+        convertedAmounts[currency] = convertedAmount;
+      }
+
+      
+      var resultElement = document.getElementById("result");
+      resultElement.innerHTML = "";
+      for (var currency in convertedAmounts) {
+        var convertedAmount = convertedAmounts[currency];
+        var listItem = document.createElement("li");
+        listItem.textContent = "轉換成 " + currency + "：" + convertedAmount;
+        resultElement.appendChild(listItem);
+      }
+    }
+    
+  </script>
+</body>
+</html>
