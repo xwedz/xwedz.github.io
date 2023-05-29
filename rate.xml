@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exchangeRates>
+  <currency>
+    <name>USD</name>
+    <rate>0.033</rate>
+  </currency>
+  <currency>
+    <name>EUR</name>
+    <rate>0.0312</rate>
+  </currency>
+  <currency>
+    <name>JPY</name>
+    <rate>4.7893</rate>
+  </currency>
+  <currency>
+    <name>KRW</name>
+    <rate>46.6418</rate>
+  </currency>
+  <currency>
+    <name>AUD</name>
+    <rate>0.0509</rate>
+  </currency>
+</exchangeRates>
