@@ -15,17 +15,32 @@
   <ul id="result"></ul>
     
   <script>
+    function loadDoc(){
+      const xhttp = new XMLHttpRequest();
+
+      xhttp.onload = function(){
+        myfunction(this);
+      }
+
+      xhttp.open("GET", "./rate.xml");
+      xhttp.send();
+    }
+    
+    function myfunction(xml){
+      const xmlDoc = xml.responseXML;
+    }
+    
     function convertCurrency() {
       
       var taiwanAmount = parseFloat(document.getElementById("twAmount").value);
 
       
       var exchangeRates = {
-        USD: 0.03,   
-        EUR: 0.025,  
-        JPY: 3.5,    
-        KRW: 35,     
-        AUD: 0.04    
+        USD: 0.033,   
+        EUR: 0.0312,  
+        JPY: 4.7893,    
+        KRW: 46.6418,     
+        AUD: 0.0509,   
       };
 
       
